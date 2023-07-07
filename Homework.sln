@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework", "Homework\Homework.csproj", "{D93E6C93-6705-4DBC-AE63-2416E953F675}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework", "Homework\Homework.csproj", "{D93E6C93-6705-4DBC-AE63-2416E953F675}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework.Tests", "TestLessonTwo\Homework.Tests.csproj", "{7D3A5DFE-C4FD-4981-88B7-4AB6D5680DC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework.Shapes", "Homework.Shapes\Homework.Shapes.csproj", "{4ECB6306-E783-480A-B4E6-E263BEFE2E7F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{D93E6C93-6705-4DBC-AE63-2416E953F675}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D93E6C93-6705-4DBC-AE63-2416E953F675}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D93E6C93-6705-4DBC-AE63-2416E953F675}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D3A5DFE-C4FD-4981-88B7-4AB6D5680DC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D3A5DFE-C4FD-4981-88B7-4AB6D5680DC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D3A5DFE-C4FD-4981-88B7-4AB6D5680DC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D3A5DFE-C4FD-4981-88B7-4AB6D5680DC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ECB6306-E783-480A-B4E6-E263BEFE2E7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ECB6306-E783-480A-B4E6-E263BEFE2E7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ECB6306-E783-480A-B4E6-E263BEFE2E7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ECB6306-E783-480A-B4E6-E263BEFE2E7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
