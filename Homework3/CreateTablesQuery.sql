@@ -1,0 +1,49 @@
+CREATE DATABASE BookShop;
+
+CREATE TABLE [dbo].[Manufacturer] (
+	[Id] [INT] IDENTITY(1,1) NOT NULL CONSTRAINT PK_Manufacturer PRIMARY KEY,
+	[Name] [NVARCHAR](256) NOT NULL,
+	[Address] [NVARCHAR](256) NOT NULL
+	)
+
+CREATE TABLE [dbo].[Category] (
+	[Id] [INT] IDENTITY(1,1) NOT NULL CONSTRAINT PK_Category PRIMARY KEY,
+	[Name] [NVARCHAR](256) NOT NULL,
+	[Description] [TEXT] NOT NULL
+	)
+
+CREATE TABLE [dbo].[Product] (
+	[Id] [INT] IDENTITY(1,1) NOT NULL CONSTRAINT PK_Product PRIMARY KEY,
+	[Name] [NVARCHAR](256) NOT NULL,
+	[Price] [DECIMAL](10, 2) NOT NULL,
+	[Description] [TEXT] NOT NULL, 
+	[Category] [INT] NOT NULL, 
+	[Manufacturer] [INT] NOT NULL,
+	CONSTRAINT FK_Product_Manufacturer FOREIGN KEY (Manufacturer) REFERENCES dbo.Manufacturer ([Id])
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+	CONSTRAINT FK_Product_Category FOREIGN KEY (Category) REFERENCES dbo.Category ([Id])
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+	)
+	
+CREATE TABLE [dbo].[Image] (
+	[Id] [INT] IDENTITY(1,1) NOT NULL CONSTRAINT PK_Image PRIMARY KEY,
+	[Path] [NVARCHAR](256) NOT NULL,
+	[Product] [INT] NOT NULL,
+	[IsMain] [BIT] NOT NULL DEFAULT 0,
+	CONSTRAINT FK_Image_Product FOREIGN KEY (Product) REFERENCES dbo.Product ([Id])
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+	)
+
+
+CREATE TABLE [dbo].[ProductSale] (
+	[Id] [INT] IDENTITY(1,1) NOT NULL CONSTRAINT PK_ProductSale PRIMARY KEY,
+	[DateTime] [DATETIME] NOT NULL,
+	[Count] [INT] NOT NULL, 
+	[Product] [INT] NOT NULL,
+	CONSTRAINT FK_ProductSale_Product FOREIGN KEY (Product) REFERENCES dbo.Product ([Id])
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+	)
