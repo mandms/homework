@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+};
+@model NumberModel
+@model OperationModel;
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <form asp-action="Create" asp-controller="HomeController" asp-antiforgery="true">
+        <label asp-for="Value1"></label>
+        <input type="number" asp-for="Value2" />
+
+        <label asp-for="Value1"></label>
+        <input type="number" asp-for="Value2" />
+
+        <label asp-for="Sign"></label>
+        <select asp-for="Sign" asp-items="ViewBag.Operations"></select>
+    </form>
+</div>
