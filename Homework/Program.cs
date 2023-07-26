@@ -41,25 +41,27 @@ bool isParsed = int.TryParse(age, out int parsedAge);
 if (string.IsNullOrEmpty(fullname))
 {
     Console.WriteLine("Введите ФИО корректно");
+    return;
 }
-else if (string.IsNullOrEmpty(age) || !isParsed)
+if (string.IsNullOrEmpty(age) || !isParsed)
 {
     Console.WriteLine("Введите возраст корректно.");
+    return;
 }
-else if (string.IsNullOrEmpty(email) || !email.Contains("@"))
+if (string.IsNullOrEmpty(email) || !email.Contains("@"))
 {
     Console.WriteLine("Введите email корректно.");
+    return;
 }
-else if (string.IsNullOrEmpty(github) || !github.Contains("github.com"))
+if (string.IsNullOrEmpty(github) || !github.Contains("github.com"))
 {
     Console.WriteLine("Введите github корректно.");
+    return;
 }
-else
-{
-    Console.WriteLine("Информация о пользователе");
-    Console.WriteLine("ФИО:");
-    fullname?.Split(' ').ToList().ForEach(val => Console.WriteLine($"  {val}"));
-    Console.WriteLine($"Возраст: {parsedAge}");
-    Console.WriteLine($"Email: {email}");
-    Console.WriteLine($"Github: {github}");
-}
+
+Console.WriteLine("Информация о пользователе");
+Console.WriteLine("ФИО:");
+fullname?.Split(' ').ToList().ForEach(val => Console.WriteLine($"  {val}"));
+Console.WriteLine($"Возраст: {parsedAge}");
+Console.WriteLine($"Email: {email}");
+Console.WriteLine($"Github: {github}");
