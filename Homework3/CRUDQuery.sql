@@ -1,27 +1,27 @@
 USE BookShop
 INSERT INTO Manufacturer ( Name, Address ) 
 VALUES 
-('manufacturer1', 'address...'),
-('manufacturer2', 'address...'),
-('manufacturer3', 'address...')
+(N'manufacturer1', N'address...'),
+(N'manufacturer2', N'address...'),
+(N'manufacturer3', N'address...')
 
 INSERT INTO Category ( Name, Description ) 
 VALUES 
-('category1', 'description...'),
-('category2', 'description...'),
-('category3', 'description...')
+(N'category1', 'description...'),
+(N'category2', 'description...'),
+(N'category3', 'description...')
 
 INSERT INTO Product ( Name, Price, Description, Category, Manufacturer ) 
 VALUES 
-('product1', 2000.35, 'description...', 1, 1),
-('product2', 3000.45, 'description...', 2, 2),
-('product3', 4000.55, 'description...', 3, 3)
+(N'product1', 2000.35, N'description...', 1, 1),
+(N'product2', 3000.45, N'description...', 2, 2),
+(N'product3', 4000.55, N'description...', 3, 3)
 
 INSERT INTO Image ( Path, Product, IsMain ) 
 VALUES 
-('\images\690825.jpg', 1, DEFAULT),
-('\images\690825.jpg', 2, 1),
-('\images\690825.jpg', 3, DEFAULT)
+(N'\images\690825.jpg', 1, DEFAULT),
+(N'\images\690825.jpg', 2, 1),
+(N'\images\690825.jpg', 3, DEFAULT)
 
 INSERT INTO ProductSale ( Product, Count, DateTime ) 
 VALUES 
@@ -33,7 +33,7 @@ SELECT Name, Price, Description, Category, Manufacturer FROM Product
 	WHERE Price < 4000 AND Price > 1000;
 
 SELECT Name, Price, Description, Category, Manufacturer FROM Product
-	WHERE Name LIKE 'product%';
+	WHERE Name LIKE N'product%';
 
 SELECT Name, Price, Description, Category, Manufacturer FROM Product
 	WHERE Id IN (1, 3);
@@ -51,10 +51,10 @@ SELECT Category, Name FROM Product GROUP BY Category, Name;
 
 SELECT Category, COUNT(Id) as 'ProductsCount' FROM Product GROUP BY Category;
 
-UPDATE Category SET Description = 'new description...' WHERE Name = 'category1';
-UPDATE Manufacturer SET Address = 'new address...' WHERE Id = 1;
+UPDATE Category SET Description = 'new description...' WHERE Name = N'category1';
+UPDATE Manufacturer SET Address = N'new address...' WHERE Id = 1;
 UPDATE Product SET Price = 2100 WHERE Id IN (2, 3);
-UPDATE Image SET Path = '\images\693424.jpg' WHERE NOT IsMain = 1;
+UPDATE Image SET Path = N'\images\693424.jpg' WHERE NOT IsMain = 1;
 UPDATE ProductSale SET Product = 1 WHERE DateTime BETWEEN '2023-07-05' AND '2023-07-06';
 
 DELETE Product WHERE Id = 1;
